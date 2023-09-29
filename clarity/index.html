@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head><meta charset="utf-8"></head>
+    <body>
+        <div id="element" style="border:5px #000 solid;padding:100px;cursor:pointer;">MOUSEOVER and MOUSEOUT ME</div>
+    </body>
+<script>
+    const element = document.getElementById("element");
+
+    let popup;
+
+    element.addEventListener("mouseover", () => {
+        popup = document.createElement("span");
+        popup.innerHTML = "popup is shown";
+        document.body.appendChild(popup);
+    });
+    element.addEventListener("mouseout", () => {
+        document.body.removeChild(popup);
+        popup = null;
+    });
+
+</script>
+</html>
